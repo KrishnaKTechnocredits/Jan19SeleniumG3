@@ -19,15 +19,19 @@ public class Init {
 	// Method to open chrome browser
 	public static WebDriver initChromeDriver() {
 		WebDriver driver = null;
+		System.out.println("in initChromeDriver ");
 		// If block is for mac users 
 		String osName = System.getProperty("os.name");
 		if (osName.indexOf("Mac") > -1) {
+			System.out.println("1");
 			System.setProperty("webdriver.chrome.driver", ConstantPath.CHROME_MAC_PATH);
 		}
 		//Else block is for windows users
 		else {
-			System.setProperty("webdriver.driver.chromedriver", ConstantPath.CHROME_EXE_PATH);
+			System.out.println("2");
+			System.setProperty("webdriver.chrome.driver", ConstantPath.CHROME_EXE_PATH);
 		}
+		System.out.println("3");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		return driver;
