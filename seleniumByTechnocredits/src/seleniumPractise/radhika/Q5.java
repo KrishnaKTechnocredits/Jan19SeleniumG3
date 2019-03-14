@@ -18,9 +18,8 @@ public class Q5 {
 		driver.findElement(By.id("registration2")).click();
 		System.out.println("User clicked on the Registration button ");
 		driver.manage().window().maximize();
-		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		// JavascriptExecutor js = (JavascriptExecutor) driver;
 		((JavascriptExecutor) driver).executeScript("scroll(0,400)");
-
 		// driver.findElement(By.id("unameSignin")).sendKeys("Vedika");
 		driver.findElement(By.xpath("//input[@id='unameSignin' and @class='form-control' ]")).sendKeys("Vedika");
 		System.out.println("Username filled ");
@@ -34,16 +33,11 @@ public class Q5 {
 		System.out.println("GetText from thepop up ");
 		if (str1.equals(str2)) {
 			System.out.println("It is correct pop up and you enetered less than 8 ");
-		}
-
-		else {
+		} else {
 			System.out.println("you entered correct password i.e greater than 8  ");
 		}
-
 		Thread.sleep(3000);
 		driver.close();
 
 	}
-	}
-
-
+}
